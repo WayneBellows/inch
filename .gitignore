@@ -1,0 +1,7 @@
+# Secrets live here and nowhere else. Never commit .env.
+.env
+.env.*
+!.env.example
+
+# Made by setup.ps1 (a link to skills/)
+.claude/skills
