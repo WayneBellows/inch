@@ -13,7 +13,18 @@ This skill reads. Writes exist in the API, but changes stay with the admin.
 - Keep the secret out of scripts and chat. Read it from a secret store or an environment variable.
 - Pull the live API spec first: `GET <base>/swagger/v1/swagger.json` with the bearer token. Without the token you get a redirect to sign-in. A saved copy goes out of date between releases.
 
-## Get a token
+## The helper (use this first)
+
+[scripts/nme.ps1](scripts/nme.ps1) does the token, the base URL and the traps for you. It reads the five `NME_*` values from the environment or from `.env` in the agent's root folder ([connections/nerdio-rest-api.md](../../connections/nerdio-rest-api.md)).
+
+```powershell
+pwsh skills/nerdio-rest-api/scripts/nme.ps1 check                      # are the values set, does a read work
+pwsh skills/nerdio-rest-api/scripts/nme.ps1 get /api/v1/arm/account    # any GET, as JSON
+```
+
+The [nme-scripted-actions](../nme-scripted-actions/SKILL.md) and [nme-shell-apps](../nme-shell-apps/SKILL.md) skills use the same helper. Its write commands refuse to run without `-Approved`.
+
+## Get a token (your own script)
 
 ```powershell
 $tok = (Invoke-RestMethod -Uri $env:NME_TOKEN_URL -Method POST -Body @{

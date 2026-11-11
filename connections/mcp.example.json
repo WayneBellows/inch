@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "nerdio": {
+      "command": "npx",
+      "args": ["-y", "@nerdio-inc/mcp-bridge", "https://<your-nerdio-manager-app>/mcp"]
+    },
+    "azure": {
+      "command": "npx",
+      "args": ["-y", "@azure/mcp@latest", "server", "start", "--read-only"]
+    }
+  }
+}

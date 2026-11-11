@@ -37,7 +37,7 @@ A pattern for the first one that does not also flag the valid `$(if ...)`: `(?<!
 
 ## Step 3: for Nerdio scripted actions
 
-See [rules/nerdio-scripted-actions.md](../../rules/nerdio-scripted-actions.md): no here-strings and no backtick-escaped quotes.
+See section 3 of [RULES.md](../../RULES.md): no here-strings and no backtick-escaped quotes.
 
 ## Report
 
